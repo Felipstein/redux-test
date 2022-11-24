@@ -5,6 +5,7 @@ export interface RepoContextType {
   repositories: Repository[];
   addNewRepo: (name: string, description: string) => Repository;
   removeRepo: (id: string) => void;
+  clearRepos: () => void;
 }
 
 export const RepoContext = createContext<RepoContextType | null>(null);
@@ -31,8 +32,12 @@ export function RepoProvider({ children }: RepoProviderProps) {
     setRepositories(prevState => prevState.filter(repo => repo.id !== id));
   }
 
+  function clearRepos() {
+    setRepositories([]);
+  }
+
   return (
-    <RepoContext.Provider value={{ repositories, addNewRepo, removeRepo }}>
+    <RepoContext.Provider value={{ repositories, addNewRepo, removeRepo, clearRepos }}>
       {children}
     </RepoContext.Provider>
   );

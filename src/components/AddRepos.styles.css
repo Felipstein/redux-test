@@ -1,0 +1,10 @@
+.actions {
+  position: absolute;
+
+  top: 60px;
+  left: 250px;
+}
+
+button {
+  margin: 10px;
+}

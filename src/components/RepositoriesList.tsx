@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { RepoContext, RepoContextType } from "../contexts/RepoContext";
 import { RepositoryCard } from "./RepositoryCard";
 
